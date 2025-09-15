@@ -10,7 +10,7 @@ def alarm():
         print(now)
         if alarm_clock == now:
             print("Time's up")
-            break
+            busy = False
         time.sleep(1)
 
 alarm()
@@ -30,5 +30,6 @@ while answer not in ['r','p']:
         alarm()
     elif answer == 'p':
         pygame.mixer.music.pause()
+
 
 
