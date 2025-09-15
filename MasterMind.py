@@ -3,7 +3,6 @@ import random
 colors = ['B', 'G', 'R',  'Y']
 
 palette = random.choices(colors, k=4)
-print(palette)
 
 print(f'Guess palette of 4 colors: {colors}')
 
@@ -39,10 +38,12 @@ def play():
 
         print(f'{5 - guesses} guesses remaining.')
 
-        if guesses == 5:
+        if guesses == 6:
             break
 
     return answer, guesses
 
+answer, guesses = play()
+if guesses <= 5:
+    print(f'Congrats! you guessed it with {guesses} guesses.')
 
-print(play())
