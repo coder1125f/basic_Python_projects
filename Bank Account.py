@@ -7,11 +7,11 @@ def deposit():
     amount = input("How much do you want to deposit? ")
     if not amount.isdigit():
         print("Please enter a number.")
-        deposit()
+        return 0
     amount = float(amount)
     if amount < 0:
         print("Please enter a valid amount.")
-        deposit()
+        return 0
     return amount
 
 # withdraw
@@ -19,14 +19,14 @@ def withdraw():
     amount = input("How much do you want to withdraw? ")
     if not amount.isdigit():
         print("Please enter a number.")
-        withdraw()
+        return 0
     amount = float(amount)
     if amount < 0:
         print("Please enter a valid amount.")
-        withdraw()
+        return 0
     if amount > balance:
         print(f"You dont have ${amount} to withdraw.")
-        withdraw()
+        return 0
     return amount
 
 balance = 1000
@@ -73,3 +73,4 @@ while next:
 
     show_questions()
     next = input('Do you want to do anything else? (y / n): ').lower()
+
